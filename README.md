@@ -1,272 +1,142 @@
 # Retail Profit Leakage & Operational Analytics
 
-## Project Overview
+##  Project Overview
 
-An end-to-end Business Intelligence project built using PostgreSQL and Power BI to analyze retail sales performance, profitability, returns, fulfillment efficiency, and profit leakage across a multi-year retail dataset.
+Retail businesses often generate strong sales but still struggle to maximize profitability due to pricing, discounting, returns, and operational inefficiencies.
 
-The project goes beyond traditional sales reporting by identifying operational and financial factors that negatively impact profitability, including excessive discounting, loss-making customers, high-return regions, and fulfillment inefficiencies.
+This project analyzes retail sales performance to identify the key drivers of profit leakage using **PostgreSQL** and **Power BI**. The analysis combines business-focused SQL, interactive dashboards, and Root Cause Analysis (RCA) to uncover profitability issues and provide actionable business recommendations.
 
-The analysis was conducted using SQL for data exploration and business analysis, followed by Power BI for dashboard development and executive-level reporting.
+--- 
 
----
-
-# Business Problem
-
-Despite generating strong sales revenue, the business experienced profitability challenges due to margin erosion, return-heavy regions, aggressive discounting, and operational inefficiencies.
-
-The objective was to identify where profit leakage occurs and determine the key operational and commercial factors affecting overall business performance.
-
----
-
-# Project Objectives
-
-- Analyze overall sales, profit, and margin performance
-- Identify loss-making categories and customers
-- Measure the impact of discounting on profitability
-- Evaluate return trends across regions
-- Assess fulfillment and shipping performance
-- Analyze sales representative efficiency
-- Identify profitable geographic markets and routes
-- Generate business recommendations to improve profitability
-
----
-
-# Tools & Technologies
-
-| Tool | Purpose |
-|--------|---------|
-| PostgreSQL | Data Analysis & Querying |
-| Power BI | Dashboard Development |
-| DAX | KPI Calculations |
-| CTEs | Complex Business Analysis |
-| Window Functions | Trend & Ranking Analysis |
-| Time-Series Analysis | Growth & Performance Tracking |
-
----
-
-# Dataset Overview
-
-The dataset contains retail transaction data including:
-
-- Orders
-- Customers
-- Products
-- Categories & Sub-Categories
-- Sales
-- Profit
-- Discounts
-- Returns
-- Regions
-- States & Cities
-- Shipping Modes
-- Fulfillment Dates
-- Sales Representatives
-
----
-
-# Key Business Metrics
+##  Key Business Metrics
 
 | Metric | Value |
-|---------|---------|
+|--------|------:|
 | Total Sales | $2.30M |
 | Total Profit | $286.4K |
 | Profit Margin | 12.47% |
-| Total Orders | 5K |
+| Total Orders | 5,009 |
 | Return Rate | 8.0% |
-| Avg Fulfillment Days | 34.6 |
+| Avg. Fulfillment Days | 34.6 Days |
 
 ---
 
-# SQL Analysis Performed
+##  Business Problem
 
-The SQL workflow focused on uncovering profitability risks, operational inefficiencies, and business growth opportunities.
+Despite generating strong revenue, businesses can still experience declining profitability due to ineffective pricing strategies, excessive discounting, operational inefficiencies, and low-performing products.
 
-## Data Validation & Cleaning
-
-- Duplicate record checks
-- Data quality validation
-- Null value analysis
-- Date formatting and transformation
+The objective of this project is to identify where profit leakage occurs, understand the underlying business drivers, and provide data-driven recommendations to improve profitability.
 
 ---
 
-## Business Performance Analysis
+##  Business Objectives
 
-- Sales & Profit KPIs
-- Year-over-Year Growth Analysis
-- Month-over-Month Growth Analysis
-- Quarterly Performance Analysis
-- Rolling Revenue Trends
-
-### SQL Concepts Used
-
-- Aggregate Functions
-- CASE Statements
-- GROUP BY
-- ORDER BY
-- Common Table Expressions (CTEs)
-- Window Functions
-- LAG()
-- RANK()
-- Rolling Averages
+- Analyze sales, profit, and profit margins across regions and product categories.
+- Identify products, customers, and regions contributing to profit leakage.
+- Evaluate the impact of discounts, returns, and fulfillment efficiency on profitability.
+- Perform Root Cause Analysis (RCA) to identify key profitability drivers.
+- Develop interactive dashboards and provide actionable business recommendations.
 
 ---
 
-## Profit Leakage Analysis
+## Dataset Information
 
-Investigated profitability issues through:
+| Attribute | Details |
+|-----------|---------|
+| Domain | Retail Analytics |
+| Records | 9,994 |
+| Columns | 22 |
+| Granularity | Order-Level Transactions |
+| Tools Used | PostgreSQL, Power BI, Microsoft Excel |
 
-- Loss-Making Categories
-- Loss-Making Customers
-- Discount Impact Analysis
-- Margin Erosion Detection
-- Category-Level Profitability Analysis
+### Dataset Features
+
+- Customer & Order Information
+- Product Category & Sub-Category
+- Sales, Profit & Discount
+- Shipping & Fulfillment Details
+- Regional & Geographic Information
+---
+
+##  Analytical Approach
+
+- Explored and validated retail order-level data.
+- Performed exploratory and business-focused analysis using PostgreSQL.
+- Calculated KPIs using CTEs, Window Functions, CASE expressions, Ranking, and Time-Series Analysis.
+- Built interactive Power BI dashboards for executive reporting and operational insights.
+- Conducted Root Cause Analysis (RCA) and developed strategic business recommendations.
 
 ---
 
-## Returns Analysis
+## 📊 Dashboard Overview
 
-Evaluated:
+Executive Overview
+[<img width="1280" height="721" alt="Overview" src="https://github.com/user-attachments/assets/1d023f52-ca86-44b7-8b1f-8a5098fa9c31" />
+]
 
-- Return Rate by Region
-- Return Impact on Profitability
-- Return Concentration Analysis
-- Regional Return Trends
+Profit Leakage & Operational Analytics
+[<img width="1282" height="710" alt="Profit leakage" src="https://github.com/user-attachments/assets/6d02348a-f5b4-43ab-b75c-45b499d0f978" />
+]
 
----
+Profit Leakage Investigation (RCA)
+[<img width="1272" height="707" alt="Investigation" src="https://github.com/user-attachments/assets/f38660c5-e2e1-46b4-bce2-b4575330bc94" />
+]
 
-## Operations & Fulfillment Analysis
-
-Analyzed:
-
-- Shipping Mode Performance
-- Average Fulfillment Duration
-- Delivery Efficiency
-- Operational Bottlenecks
 
 ---
 
-## Customer & Retention Analysis
+##  Key Findings
 
-Evaluated:
-
-- Customer Segmentation
-- Customer Profitability
-- Churn Customer Identification
-- Repeat Purchase Behavior
-
----
-
-## Geographic Performance Analysis
-
-Analyzed:
-
-- State-Level Profitability
-- City-Level Profitability
-- Most Profitable Routes
-- Regional Performance Trends
+- Furniture recorded the lowest profit margin (**2.49%**), significantly underperforming other product categories.
+- Tables emerged as the primary source of profit leakage, generating negative profit across multiple regions.
+- Average discounts exceeding **20%** were associated with loss-making Furniture products.
+- Profitability varied across regions, demonstrating that higher sales did not always translate into higher profit.
+- Stable return rates indicated that returns were not the primary driver of profit leakage.
 
 ---
 
-# Power BI Dashboard
+##  Root Cause Analysis
 
-## Page 1 — Executive Overview
-
-Provides a high-level view of business performance through:
-
-### KPI Cards
-
-- Total Sales
-- Total Profit
-- Profit Margin %
-- Return Rate %
-- Total Orders
-- Avg Fulfillment Days
-
-### Executive Analysis
-
-- Monthly Sales & Profit Margin Trends
-- Regional Performance Analysis
-- Top Profit-Generating Sub-Categories
-- Loss-Making Sub-Categories
-- Shipping Mode Performance
+A detailed Root Cause Analysis (RCA) was performed to investigate the factors contributing to profit leakage. The analysis revealed that margin erosion was primarily driven by low-performing Furniture sub-categories, particularly **Tables**, where higher discount levels coincided with negative profitability across multiple regions. Additional investigation showed that return rates remained relatively stable, indicating that pricing strategy rather than returns was the primary contributor to profit leakage.
 
 ---
 
-## Page 2 — Profit Leakage & Operational Analytics
+##  Business Impact
 
-Focused on identifying factors driving profitability pressure.
-
-### Profit Leakage Analysis
-
-- Discount Impact on Sales & Profitability
-- Loss-Making Customers Analysis
-- Customer Profitability by Sub-Category
-
-### Commercial & Operational Performance
-
-- Sales Representative Efficiency
-- Profitability by Geographic Route
-- Margin Erosion Analysis
-
-### Executive Insights
-
-Highlights key drivers of profit leakage and operational inefficiencies.
+- Identified low-margin products requiring immediate pricing review.
+- Highlighted opportunities to improve profitability through optimized discount strategies.
+- Demonstrated the importance of monitoring profitability alongside revenue.
+- Provided decision-makers with actionable insights to support sustainable business growth.
 
 ---
 
-# Key Insights
+##  Strategic Recommendations
 
-- Profit margin declined significantly as discount levels increased.
-- Profitability turned negative in higher discount bands, indicating margin erosion from aggressive discounting.
-- Tables, Bookcases, and Supplies were the primary loss-making sub-categories.
-- Approximately 155 customers generated negative cumulative profit contribution.
-- The West region recorded the highest return rate, contributing to profitability pressure.
-- Standard Class shipping showed the longest fulfillment duration.
-- Profitability varied significantly across sales representatives and geographic markets.
+- **Optimize Pricing & Discount Strategy:** Review discounts for low-margin Furniture products and introduce margin-based approval thresholds.
+- **Strengthen Profitability Monitoring:** Continuously monitor product profitability, discount levels, and regional performance to identify margin erosion early.
+- **Adopt Profit-Focused Decision Making:** Incorporate profitability metrics into pricing, promotional campaigns, and sales performance evaluations.
 
 ---
 
-# Business Recommendations
+## 🛠️ Skills Demonstrated
 
-## 1. Optimize Discount Strategy
-
-Reduce excessive discounting and implement targeted promotional campaigns to improve profitability while maintaining sales performance.
-
-## 2. Address Profit Leakage
-
-Regularly monitor loss-making products and customers to identify opportunities for pricing adjustments, product rationalization, or operational improvements.
-
-## 3. Improve Return Management
-
-Investigate high-return regions and product groups to reduce return-related costs and improve customer satisfaction.
-
-## 4. Strengthen Sales Performance Monitoring
-
-Evaluate sales representatives using profit-based KPIs alongside revenue targets to encourage sustainable growth.
-
-## 5. Improve Operational Efficiency
-
-Optimize fulfillment processes and shipping strategies to reduce delivery delays and improve operational performance.
+- SQL (PostgreSQL)
+- Power BI
+- Data Cleaning & Validation
+- Exploratory Data Analysis (EDA)
+- KPI Development
+- Business Analysis
+- Root Cause Analysis (RCA)
+- Dashboard Design
+- Data Visualization
+- Business Storytelling
 
 ---
 
-# Dashboard Preview
+##  Business Value Delivered
 
-## Executive Overview
- <img width="1280" height="721" alt="Overview" src="https://github.com/user-attachments/assets/7e24b9ba-36cb-4fcf-b5e7-e96d853cc111" />
- 
-## Profit Leakage & Operational Analytics
-<img width="1282" height="710" alt="Profit leakage" src="https://github.com/user-attachments/assets/daa78eb9-9838-4629-b06c-0d3d8af08bd7" />
+This project demonstrates how data analytics can move beyond descriptive reporting by identifying the underlying drivers of profit leakage and translating analytical findings into actionable business recommendations. The dashboards support stakeholders in monitoring profitability, prioritizing pricing decisions, and improving overall business performance.
 
----
-
-# Files Included
-
-- Power BI Dashboard (.pbix)
-- SQL Analysis Queries
-- Dashboard Screenshots
-- Project Documentation
 
 ---
 
